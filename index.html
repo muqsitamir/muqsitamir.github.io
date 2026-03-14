@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muqsit Islam | Computer Vision Researcher</title>
+  <meta name="description" content="Portfolio of Muqsit Islam — Computer Vision, 3D Vision, Visual SLAM, and deployable ML systems." />
+  <meta name="theme-color" content="#0b1120" />
+  <style>
+    :root {
+      --bg: #08101f;
+      --bg-soft: #0d1730;
+      --panel: rgba(14, 24, 48, 0.88);
+      --panel-2: rgba(20, 34, 67, 0.95);
+      --text: #eef4ff;
+      --muted: #aab7d4;
+      --line: rgba(255,255,255,0.09);
+      --accent: #86a8ff;
+      --accent-2: #9ce7ff;
+      --success: #b6ffd2;
+      --shadow: 0 20px 60px rgba(0,0,0,0.28);
+      --radius: 24px;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(134,168,255,0.16), transparent 25%),
+        radial-gradient(circle at left 10%, rgba(156,231,255,0.10), transparent 20%),
+        linear-gradient(180deg, #070d1a 0%, #091326 45%, #08101f 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8, 16, 31, 0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .socials a:hover,
+    .mini-links a:hover,
+    .project-links a:hover {
+      color: var(--accent-2);
+    }
+
+    .hero {
+      padding: 4.8rem 0 2rem;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .card,
+    .timeline-item,
+    .publication,
+    .contact-card,
+    .footer-card {
+      border-radius: var(--radius);
+    }
+
+    .hero-main {
+      padding: 2rem;
+    }
+
+    .hero-side {
+      padding: 1.25rem;
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.48rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(134,168,255,0.10);
+      border: 1px solid rgba(134,168,255,0.24);
+      color: #d7e5ff;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 64ch;
+      margin: 1rem 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.85rem 1.1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-weight: 700;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(156,231,255,0.35);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #071120;
+      border: none;
+    }
+
+    .socials,
+    .mini-links,
+    .project-links,
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .socials {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .stat {
+      padding: 1rem 1.05rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .section {
+      padding: 1rem 0 0.6rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.85rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      max-width: 74ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      padding: 1.25rem;
+    }
+
+    .card h3,
+    .timeline-item h3,
+    .publication h3,
+    .contact-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.08rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    .chip {
+      padding: 0.42rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: #dfe8ff;
+      font-size: 0.9rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      padding: 1.3rem;
+    }
+
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-role {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.85rem;
+    }
+
+    .tag {
+      padding: 0.35rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(156,231,255,0.08);
+      border: 1px solid rgba(156,231,255,0.16);
+      color: #dffbff;
+      font-size: 0.84rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.01));
+      pointer-events: none;
+    }
+
+    .project-links,
+    .mini-links,
+    .contact-links {
+      margin-top: 0.9rem;
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .publication {
+      padding: 1.35rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-card,
+    .footer-card {
+      padding: 1.4rem;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+    }
+
+    .footnote {
+      color: var(--muted);
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .separator {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      margin: 1rem 0 0;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0.6rem 0 0;
+    }
+
+    li + li { margin-top: 0.35rem; }
+
+    .profile-box {
+      padding: 1rem;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,0.16);
+      color: var(--muted);
+      text-align: center;
+      min-height: 160px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.02);
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .grid-3,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.9rem 0;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.4rem;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top">Muqsit Islam</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-main glass">
+        <div class="eyebrow">Computer Vision · 3D Vision · Visual SLAM · Robotic Perception</div>
+        <h1>Research-minded vision engineer building systems that survive real-world constraints.</h1>
+        <p class="lead">
+          I’m Muqsit Islam, an Erasmus Mundus master’s student in Image Processing and Computer Vision. I work across
+          computer vision research, deployable machine learning, multimodal perception, and emerging 3D scene understanding.
+          This site is where I keep the details that do not fit cleanly into a one-page CV.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn" href="#">Download CV</a>
+        </div>
+
+        <div class="socials">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Google Scholar</a>
+          <a href="#">Medium</a>
+          <a href="mailto:islammuqsit7@gmail.com">Email</a>
+        </div>
+      </div>
+
+      <aside class="hero-side glass">
+        <div class="profile-box">Add your photo or a clean headshot here</div>
+
+        <div class="stat">
+          <strong>Erasmus Mundus Joint Master’s</strong>
+          <span class="muted">Image Processing &amp; Computer Vision · 2025–2027</span>
+        </div>
+
+        <div class="stat">
+          <strong>Primary interests</strong>
+          <span class="muted">Visual SLAM, localization, 3D reconstruction, geometric vision, learning-based perception</span>
+        </div>
+
+        <div class="stat">
+          <strong>What this site is for</strong>
+          <span class="muted">Project depth, technical context, research direction, and links beyond the CV</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p class="section-copy">
+            My background combines research, field deployment, and production engineering. I’ve worked on wildlife monitoring,
+            forest-fire detection, Bayesian ML systems, web automation, and practical computer vision pipelines. I’m especially
+            interested in moving deeper into 3D vision, scene understanding, semantic SLAM, and robotics-oriented perception.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card glass">
+          <h3>Research angle</h3>
+          <p class="muted">I care about methods that are not only accurate on paper, but useful when datasets are messy, hardware is limited, and environments are unpredictable.</p>
+        </article>
+        <article class="card glass">
+          <h3>Engineering angle</h3>
+          <p class="muted">I like reproducible pipelines, clear experimentation, and systems that are maintainable after the demo phase is over.</p>
+        </article>
+        <article class="card glass">
+          <h3>Career direction</h3>
+          <p class="muted">I’m aiming for roles and research work around computer vision, 3D perception, robotics, and advanced ML systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-copy">A few representative projects. On GitHub Pages, each of these can later become its own detailed page with methods, figures, results, lessons, and links.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card glass project-card">
+          <h3>Wildlife Detection and Species Classification</h3>
+          <p class="muted">
+            Built remote-camera wildlife pipelines using detection and classification models including MegaDetector, TinyYOLO,
+            and multimodal-style approaches for species recognition under challenging field conditions.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Object detection</span>
+            <span class="tag">Classification</span>
+            <span class="tag">Conservation AI</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Project details</a>
+            <a href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="card glass project-card">
+          <h3>Vision-Based Forest Fire Detection</h3>
+          <p class="muted">
+            Worked on fire detection from remote imagery, including data preparation, model assessment, backend-facing integration,
+            and field-relevant reliability concerns for real monitoring setups.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Safety systems</span>
+            <span class="tag">Applied CV</span>
+            <span class="tag">Deployment</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Project details</a>
+            <a href="#">Write-up</a>
+          </div>
+        </article>
+
+        <article class="card glass project-card">
+          <h3>SORT on KITTI 2D Tracking</h3>
+          <p class="muted">
+            Implemented SORT from the ground up with Kalman filtering, Hungarian assignment, track lifecycle handling,
+            evaluation logic, and robustness analysis on benchmark-style data.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Tracking</span>
+            <span class="tag">Kalman filter</span>
+            <span class="tag">Benchmarking</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Technical notes</a>
+            <a href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="card glass project-card">
+          <h3>sEMG Muscle Fatigue Detection Toolbox</h3>
+          <p class="muted">
+            Built a signal-processing and machine learning toolbox with filtering, repetition-wise segmentation, feature extraction,
+            fatigue cues, and user-facing visualization logic.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Signal processing</span>
+            <span class="tag">ML toolbox</span>
+            <span class="tag">Biomedical data</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Project details</a>
+            <a href="#">Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-copy">The short CV version is useful, but this section gives a bit more technical flavor.</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item glass">
+          <div class="timeline-head">
+            <div>
+              <div class="timeline-role">Research Assistant · Computer Vision &amp; Graphics Lab, LUMS</div>
+              <div class="muted">Jun 2022 – Dec 2025</div>
+            </div>
+            <div class="muted">Lahore, Pakistan</div>
+          </div>
+          <p class="muted">
+            Worked on research and deployment-focused computer vision systems for wildlife monitoring and forest-fire detection
+            with conservation partners. The work included model iteration, pipeline design, validation, and practical constraints
+            from real field environments.
+          </p>
+          <ul>
+            <li>Built and maintained detection/classification pipelines for monitoring tasks.</li>
+            <li>Connected lab experimentation with field validation in difficult terrain and operating conditions.</li>
+            <li>Contributed to applied research outcomes with direct external stakeholder relevance.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item glass">
+          <div class="timeline-head">
+            <div>
+              <div class="timeline-role">Data Scientist · Afiniti</div>
+              <div class="muted">Sep 2024 – Aug 2025</div>
+            </div>
+            <div class="muted">Lahore, Pakistan</div>
+          </div>
+          <p class="muted">
+            Worked on probabilistic and Bayesian machine learning systems in a production setting, focusing on model behavior,
+            diagnostics, retraining, and keeping deployed pipelines reliable.
+          </p>
+          <ul>
+            <li>Built and analyzed Bayesian/probabilistic models for operational decision systems.</li>
+            <li>Handled model maintenance, retraining, and performance-focused troubleshooting.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item glass">
+          <div class="timeline-head">
+            <div>
+              <div class="timeline-role">Web Scraping &amp; Automation Engineer · SoftCreed Co.</div>
+              <div class="muted">Mar 2021 – Jun 2022</div>
+            </div>
+            <div class="muted">Remote</div>
+          </div>
+          <p class="muted">
+            Built data extraction and browser automation systems using scraping frameworks and scripted workflows for real client use cases.
+          </p>
+          <ul>
+            <li>Developed scalable automation workflows with Selenium and Scrapy.</li>
+            <li>Delivered structured datasets and custom extraction pipelines.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Research &amp; Publications</h2>
+          <p class="section-copy">This section is useful for papers, preprints, thesis work, posters, and works in progress.</p>
+        </div>
+      </div>
+
+      <article class="publication glass">
+        <h3>VGGT-based online 3D semantic SLAM for indoor scene understanding and navigation</h3>
+        <p class="muted">Preprint / work under review</p>
+        <p class="muted">
+          Worked on implementation, experimental setup, indoor semantic SLAM analysis, and paper revision for a system combining
+          geometry-aware reasoning with semantic scene understanding.
+        </p>
+        <div class="mini-links">
+          <a href="#">Paper</a>
+          <a href="#">Code</a>
+          <a href="#">Slides</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="two-col">
+        <div class="card glass">
+          <h3>Education</h3>
+          <p><strong>Erasmus Mundus Joint Master’s in Image Processing &amp; Computer Vision</strong><br><span class="muted">2025 – 2027</span></p>
+          <p class="muted">Pázmány Péter Catholic University · Universidad Autónoma de Madrid · Université de Bordeaux</p>
+          <div class="separator"></div>
+          <p><strong>BS Computer Science</strong><br><span class="muted">University of Management and Technology · 2020 – 2024</span></p>
+          <p class="muted">Silver Medalist · Dean’s Award · Rector’s Award · Teaching Assistant (Deep Learning)</p>
+        </div>
+
+        <div id="skills" class="card glass">
+          <h3>Skills</h3>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">C++</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">R</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">TensorFlow / Keras</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">YOLO family</span>
+            <span class="chip">MegaDetector</span>
+            <span class="chip">CLIP</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Django</span>
+            <span class="chip">React</span>
+            <span class="chip">SQL / NoSQL</span>
+            <span class="chip">Selenium</span>
+            <span class="chip">Scrapy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact-card glass">
+        <h3>Contact</h3>
+        <p class="muted">
+          Open to research collaborations, internships, applied computer vision work, and opportunities in 3D vision,
+          perception, and machine learning engineering.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:islammuqsit7@gmail.com">islammuqsit7@gmail.com</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Scholar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card glass">
+        <strong>GitHub Pages note:</strong>
+        <div class="footnote">
+          Replace all placeholder links, add your username-based GitHub Pages repo, and optionally split Projects and Research into separate pages later.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
