@@ -374,15 +374,19 @@
     li + li { margin-top: 0.35rem; }
 
     .profile-box {
-      padding: 1rem;
       border-radius: 18px;
-      border: 1px dashed rgba(255,255,255,0.16);
-      color: var(--muted);
-      text-align: center;
-      min-height: 160px;
-      display: grid;
-      place-items: center;
+      overflow: hidden;
+      min-height: 320px;
       background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      object-position: center;
     }
 
     @media (max-width: 960px) {
@@ -435,9 +439,9 @@
     <section class="hero">
       <div class="hero-main glass">
         <div class="eyebrow">Computer Vision · Medical Imaging · 3D Vision · Visual SLAM · Robotic Perception</div>
-        <h1>Research engineer </h1>
+        <h1>Muqsit Islam</h1>
         <p class="lead">
-          I am Muqsit Islam, an Erasmus Mundus scholar and graduate researcher working in Image Processing and Computer Vision. 
+          I am an Erasmus Mundus scholar and researcher in image processing and computer vision, with interests spanning medical imaging, 3D vision, visual SLAM, and learning-based perception.
         </p>
 
         <div class="hero-actions">
@@ -456,9 +460,8 @@
 
       <aside class="hero-side glass">
         <div class="profile-box">
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQEv8ypCYgfLBg/profile-displayphoto-crop_800_800/B4DZpUoiTFGwAM-/0/1762356504797?e=1775088000&v=beta&t=DnPtptW-u3xRfYJ65K1IbnZTUAc6CBynBFxPjDbLYHc" alt="Profile Photo" class="profile-img">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQEv8ypCYgfLBg/profile-displayphoto-crop_800_800/B4DZpUoiTFGwAM-/0/1762356504797?e=1775088000&v=beta&t=DnPtptW-u3xRfYJ65K1IbnZTUAc6CBynBFxPjDbLYHc" alt="Muqsit Islam" class="profile-img">
         </div>
-      </aside>
 
         <div class="stat">
           <strong>Erasmus Mundus Joint Master’s</strong>
@@ -467,7 +470,7 @@
 
         <div class="stat">
           <strong>Primary interests</strong>
-          <span class="muted">Medical Imaging, MR Harmonization, Visual SLAM, localization, 3D reconstruction, learning-based perception</span>
+          <span class="muted">Medical imaging, MR harmonization, visual SLAM, 3D reconstruction, and learning-based perception</span>
         </div>
       </aside>
     </section>
@@ -477,9 +480,7 @@
         <div>
           <h2 class="section-title">About</h2>
           <p class="section-copy">
-            My background combines research, field deployment, and production engineering. I’ve worked on wildlife monitoring,
-            forest-fire detection, Bayesian ML systems, web automation, and practical computer vision pipelines. I’m especially
-            interested in moving deeper into 3D vision, scene understanding, semantic SLAM, and robotics-oriented perception.
+            My background spans research, deployment, and machine learning engineering across computer vision problems including wildlife monitoring, forest-fire detection, Bayesian ML systems, medical imaging, and practical vision pipelines. I am particularly interested in 3D vision, scene understanding, semantic SLAM, and robotics-oriented perception.
           </p>
         </div>
       </div>
@@ -487,15 +488,15 @@
       <div class="grid grid-3">
         <article class="card glass">
           <h3>Research angle</h3>
-          <p class="muted">I care about methods that are not only accurate on paper, but useful when datasets are messy, hardware is limited, and environments are unpredictable.</p>
+          <p class="muted">I care about methods that are not only strong experimentally, but also robust under real constraints such as imperfect data, limited hardware, and operational complexity.</p>
         </article>
         <article class="card glass">
           <h3>Engineering angle</h3>
-          <p class="muted">I like reproducible pipelines, clear experimentation, and systems that are maintainable after the demo phase is over.</p>
+          <p class="muted">I value reproducible pipelines, disciplined experimentation, and systems that remain usable beyond the prototype stage.</p>
         </article>
         <article class="card glass">
           <h3>Career direction</h3>
-          <p class="muted">I’m aiming for roles and research work around computer vision, 3D perception, robotics, and advanced ML systems.</p>
+          <p class="muted">I am pursuing research and engineering work at the intersection of computer vision, medical imaging, 3D perception, and advanced ML systems.</p>
         </article>
       </div>
     </section>
@@ -504,7 +505,7 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">Selected Projects</h2>
-          <p class="section-copy">A few representative projects. On GitHub Pages, each of these can later become its own detailed page with methods, figures, results, lessons, and links.</p>
+          <p class="section-copy">A selection of projects spanning applied computer vision, tracking, signal processing, and perception-oriented systems.</p>
         </div>
       </div>
 
@@ -583,7 +584,7 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">Experience</h2>
-          <p class="section-copy">The short CV version is useful, but this section gives a bit more technical flavor.</p>
+          <p class="section-copy">Selected roles with emphasis on the technical scope of the work.</p>
         </div>
       </div>
 
@@ -649,7 +650,7 @@
       <div class="section-head">
         <div>
           <h2 class="section-title">Research &amp; Publications</h2>
-          <p class="section-copy">This section is useful for papers, preprints, thesis work, posters, and works in progress.</p>
+          <p class="section-copy">Publications and ongoing research directions.</p>
         </div>
       </div>
 
@@ -711,14 +712,13 @@
       <div class="contact-card glass">
         <h3>Contact</h3>
         <p class="muted">
-          Open to research collaborations, internships, applied computer vision work, and opportunities in 3D vision,
-          perception, and machine learning engineering.
+          Open to research collaborations and opportunities in computer vision, medical imaging, 3D vision, perception, and machine learning engineering.
         </p>
         <div class="contact-links">
           <a href="mailto:islammuqsit7@gmail.com">islammuqsit7@gmail.com</a>
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Scholar</a>
+          <a href="https://github.com/muqsitamir">GitHub</a>
+          <a href="https://www.linkedin.com/in/muqsitamir/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=BQo7EFcAAAAJ&hl=en">Scholar</a>
         </div>
       </div>
     </section>
@@ -727,10 +727,7 @@
   <footer>
     <div class="container">
       <div class="footer-card glass">
-        <strong>GitHub Pages note:</strong>
-        <div class="footnote">
-          Replace all placeholder links, add your username-based GitHub Pages repo, and optionally split Projects and Research into separate pages later.
-        </div>
+        <div class="footnote">© Muqsit Islam</div>
       </div>
     </div>
   </footer>
