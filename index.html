@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muqsit Islam | Computer Vision Researcher</title>
-  <meta name="description" content="Portfolio of Muqsit Islam — Computer Vision, 3D Vision, Visual SLAM, and deployable ML systems." />
+  <meta name="description" content="Portfolio of Muqsit Islam — Computer Vision, 3D Vision, Visual SLAM, Medical Imaging, and deployable perception systems." />
   <meta name="theme-color" content="#0b1120" />
   <style>
     :root {
@@ -153,6 +153,15 @@
       margin: 1rem 0 0;
     }
 
+    .highlight-line {
+      color: #dfe8ff;
+      font-size: 1rem;
+      max-width: 66ch;
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(156,231,255,0.55);
+    }
+
     .hero-actions {
       display: flex;
       gap: 0.85rem;
@@ -188,7 +197,8 @@
     .socials,
     .mini-links,
     .project-links,
-    .contact-links {
+    .contact-links,
+    .news-list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
@@ -339,6 +349,20 @@
       padding: 1.35rem;
     }
 
+    .news-list {
+      margin-top: 0.9rem;
+    }
+
+    .news-pill {
+      padding: 0.55rem 0.82rem;
+      border-radius: 999px;
+      background: rgba(182,255,210,0.08);
+      border: 1px solid rgba(182,255,210,0.22);
+      color: var(--success);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -441,11 +465,14 @@
         <div class="eyebrow">Computer Vision · Medical Imaging · 3D Vision · Visual SLAM · Robotic Perception</div>
         <h1>Muqsit Islam</h1>
         <p class="lead">
-          I am an Erasmus Mundus scholar and researcher in image processing and computer vision, with interests spanning medical imaging, 3D vision, visual SLAM, and learning-based perception, and recent hands-on work in MRI harmonization for multi-site medical imaging.
+          Erasmus Mundus scholar and computer vision researcher working across 3D vision, visual SLAM, medical imaging, and deployable perception systems.
+        </p>
+        <p class="highlight-line">
+          Recent work: VGGT-based online 3D semantic SLAM accepted at IEEE ICIP 2026; ongoing work on MRI harmonization for multi-site brain imaging.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn" href="#projects">See Projects</a>
           <a class="btn" href="#contact">Contact Me</a>
         </div>
 
@@ -472,48 +499,42 @@
           <strong>Primary interests</strong>
           <span class="muted">Medical imaging, MR harmonization, visual SLAM, 3D reconstruction, and learning-based perception</span>
         </div>
+
+        <div class="stat">
+          <strong>Recent publication</strong>
+          <span class="muted">VGGT-based online 3D semantic SLAM · Accepted at IEEE ICIP 2026</span>
+        </div>
       </aside>
     </section>
 
-    <section id="about" class="section">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">About</h2>
-          <p class="section-copy">
-            My background spans research, deployment, and machine learning engineering across computer vision problems including wildlife monitoring, forest-fire detection, Bayesian ML systems, medical imaging, and practical vision pipelines. I am particularly interested in 3D vision, scene understanding, semantic SLAM, and robotics-oriented perception.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-3">
-        <article class="card glass">
-          <h3>Research angle</h3>
-          <p class="muted">I care about methods that are not only strong experimentally, but also robust under real constraints such as imperfect data, limited hardware, and operational complexity.</p>
-        </article>
-        <article class="card glass">
-          <h3>Engineering angle</h3>
-          <p class="muted">I value reproducible pipelines, disciplined experimentation, and systems that remain usable beyond the prototype stage.</p>
-        </article>
-        <article class="card glass">
-          <h3>Career direction</h3>
-          <p class="muted">I am pursuing research and engineering work at the intersection of computer vision, medical imaging, 3D perception, and advanced ML systems.</p>
-        </article>
-      </div>
-    </section>
 
     <section id="projects" class="section">
       <div class="section-head">
         <div>
           <h2 class="section-title">Selected Projects</h2>
-          <p class="section-copy">Selected public projects across medical imaging, tracking, signal processing, and end-to-end machine learning systems.</p>
+          <p class="section-copy">Selected projects across 3D vision, medical imaging, tracking, and deployable perception systems.</p>
         </div>
       </div>
 
       <div class="grid grid-2">
         <article class="card glass project-card">
+          <h3>VGGT-based Online 3D Semantic SLAM</h3>
+          <p class="muted">
+            Online 3D semantic SLAM pipeline for indoor scene understanding and navigation, integrating VGGT-based visual geometry, pose estimation, 3D reconstruction, and semantic scene understanding.
+          </p>
+          <div class="tag-row">
+            <span class="tag">3D vision</span>
+            <span class="tag">Semantic SLAM</span>
+            <span class="tag">ICIP 2026</span>
+          </div>
+          <div class="project-links">
+            <a href="#research">Publication</a>
+          </div>
+        </article>
+        <article class="card glass project-card">
           <h3>HarmonIt</h3>
           <p class="muted">
-            MRI harmonization framework for reducing site-, scanner-, and protocol-driven domain shift in multi-site T1 imaging while preserving anatomy and pathology, with minimal preprocessing and evaluation centered on domain-signal removal and structural consistency.
+            Benchmark-oriented MRI harmonization framework for reducing site-, scanner-, and protocol-driven domain shift in multi-site T1 brain MRI while preserving anatomical structure and downstream robustness.
           </p>
           <div class="tag-row">
             <span class="tag">Medical imaging</span>
@@ -522,6 +543,21 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/muqsitamir/HarmonIt" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card glass project-card">
+          <h3>Applied Conservation Vision Systems</h3>
+          <p class="muted">
+            Two separate WWF-supported computer vision platforms for wildlife detection/species classification from camera-trap imagery and early forest-fire detection from remote camera feeds.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Wildlife monitoring</span>
+            <span class="tag">Forest-fire detection</span>
+            <span class="tag">Deployment</span>
+          </div>
+          <div class="project-links">
+            <a href="#experience">Experience</a>
           </div>
         </article>
 
@@ -541,9 +577,9 @@
         </article>
 
         <article class="card glass project-card">
-          <h3>EMG Fatigue Detection</h3>
+          <h3>sEMG-Based Muscle Fatigue Detection</h3>
           <p class="muted">
-            Surface electromyography-based method for detecting muscle fatigue during resistance training and estimating the optimal number of repetitions per set of bicep curls.
+            Python toolbox for detecting muscle fatigue from surface EMG signals during resistance training, using filtering, repetition segmentation, per-repetition feature extraction, and an ML-based fatigue trigger.
           </p>
           <div class="tag-row">
             <span class="tag">sEMG</span>
@@ -552,21 +588,6 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/muqsitamir/EMG_fatigue_detection" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-        <article class="card glass project-card">
-          <h3>APS Failure Detection</h3>
-          <p class="muted">
-            End-to-end machine learning pipeline for air pressure system failure detection, including exploratory analysis, preprocessing, model selection with cross-validated grid search, and threshold tuning.
-          </p>
-          <div class="tag-row">
-            <span class="tag">ML pipelines</span>
-            <span class="tag">Failure detection</span>
-            <span class="tag">Model selection</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/muqsitamir/APS_failure_detection" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </article>
       </div>
@@ -647,14 +668,16 @@
       </div>
 
       <article class="publication glass">
-        <h3>VGGT-based online 3D semantic SLAM for indoor scene understanding and navigation</h3>
-        <p class="muted">Preprint / work under review</p>
+        <h3>VGGT-based Online 3D Semantic SLAM for Indoor Scene Understanding and Navigation</h3>
+        <p class="muted"><strong>Accepted at IEEE International Conference on Image Processing — ICIP 2026</strong></p>
         <p class="muted">
-          Worked on implementation, experimental setup, indoor semantic SLAM analysis, and paper revision for a system combining
-          geometry-aware reasoning with semantic scene understanding.
+          Contributed to the implementation of the VGGT-based semantic SLAM pipeline, experimental evaluation on indoor datasets,
+          comparison against state-of-the-art methods, result analysis, and manuscript writing/revision.
         </p>
-        <div class="mini-links">
-          <a href="">Github io</a>
+        <div class="tag-row">
+          <span class="tag">3D semantic SLAM</span>
+          <span class="tag">Indoor navigation</span>
+          <span class="tag">Scene understanding</span>
         </div>
       </article>
     </section>
@@ -667,7 +690,7 @@
           <p class="muted">Pázmány Péter Catholic University · Universidad Autónoma de Madrid · Université de Bordeaux</p>
           <div class="separator"></div>
           <p><strong>BS Computer Science</strong><br><span class="muted">University of Management and Technology · 2020 – 2024</span></p>
-          <p class="muted">Silver Medalist · Dean’s Award · Rector’s Award · Teaching Assistant (Deep Learning)</p>
+          <p class="muted">Silver Medalist · Dean’s Award (2×) · Rector’s Award · Star Peer Tutor · Teaching Assistant, Deep Learning</p>
         </div>
 
         <div id="skills" class="card glass">
@@ -680,9 +703,17 @@
             <span class="chip">PyTorch</span>
             <span class="chip">TensorFlow / Keras</span>
             <span class="chip">OpenCV</span>
+            <span class="chip">Open3D</span>
+            <span class="chip">Visual SLAM</span>
+            <span class="chip">Camera pose estimation</span>
+            <span class="chip">3D reconstruction</span>
             <span class="chip">YOLO family</span>
             <span class="chip">MegaDetector</span>
             <span class="chip">CLIP</span>
+            <span class="chip">Vision Transformers</span>
+            <span class="chip">Brain MRI analysis</span>
+            <span class="chip">NeuroCombat</span>
+            <span class="chip">Domain adaptation</span>
             <span class="chip">Linux</span>
             <span class="chip">Docker</span>
             <span class="chip">Git</span>
@@ -702,11 +733,11 @@
       <div class="contact-card glass">
         <h3>Contact</h3>
         <p class="muted">
-          Open to research collaborations and opportunities in computer vision, medical imaging, 3D vision and embodied perception.
+          Open to research collaborations and opportunities in computer vision, medical imaging, 3D vision, visual SLAM, and embodied perception.
         </p>
         <div class="contact-links">
           <a href="mailto:islammuqsit7@gmail.com">Email</a>
-          <a href="tel:+34461675955" class="phone-link">Work Phone</a>
+          <a href="tel:+34675461955" class="phone-link">Phone</a>
         </div>
       </div>
     </section>
