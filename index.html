@@ -21,7 +21,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet" />
 
   <script>
     document.documentElement.classList.add('js');
@@ -78,9 +78,8 @@
       --maxw: 1080px;
       --gutter: 16px;
       --header-h: 64px;
-      --serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+      --serif: "Newsreader", ui-serif, Georgia, "Times New Roman", serif;
       --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       color-scheme: light;
     }
 
@@ -204,8 +203,8 @@
       background: var(--text);
       color: var(--bg);
       font-family: var(--serif);
+      font-weight: 500;
       font-size: 15px;
-      letter-spacing: 0.02em;
     }
     .nav-links {
       display: flex;
@@ -300,10 +299,10 @@
     .hero h1 {
       margin-top: 28px;
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(3.4rem, 8vw, 5.6rem);
-      line-height: 0.95;
-      letter-spacing: -0.015em;
+      font-weight: 500;
+      font-size: clamp(3rem, 7.4vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.025em;
     }
     .hero-role {
       margin-top: 16px;
@@ -429,18 +428,10 @@
     }
     .section-head h2 {
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(2.1rem, 4.4vw, 2.9rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-    }
-    .section-head .num {
-      display: block;
-      margin-bottom: 10px;
-      font-family: var(--mono);
-      font-size: 12.5px;
-      letter-spacing: 0.04em;
-      color: var(--accent);
+      font-weight: 500;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
     .head-link {
       display: inline-flex; align-items: center; gap: 6px;
@@ -453,9 +444,9 @@
     .head-link:hover { color: var(--accent-ink); }
 
     .eyebrow {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.03em;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--text-3);
     }
@@ -504,8 +495,8 @@
       padding: 3px 8px;
       border-radius: 6px;
       background: var(--surface-2);
-      font-family: var(--mono);
-      font-size: 12px;
+      font-size: 12.5px;
+      font-weight: 500;
       color: var(--text-2);
       line-height: 1.6;
     }
@@ -522,9 +513,10 @@
     }
     .news li:last-child { border-bottom: 0; }
     .news time {
-      padding-top: 2px;
-      font-family: var(--mono);
-      font-size: 13px;
+      padding-top: 1px;
+      font-size: 14px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
       color: var(--text);
     }
     .news b { color: var(--text); font-weight: 600; }
@@ -541,11 +533,10 @@
     .pub:last-child { border-bottom: 0; padding-bottom: 0; }
     .pub-venue { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 2px; }
     .venue {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--text);
-      letter-spacing: 0.02em;
+      font-variant-numeric: tabular-nums;
     }
     .pub-title {
       font-size: 1.12rem;
@@ -557,7 +548,7 @@
     .pub-title a:hover { background-size: 100% 1px; }
     .pub-authors { margin-top: 8px; font-size: 14.5px; color: var(--text-2); }
     .pub-authors b { color: var(--text); font-weight: 600; }
-    .pub-where { margin-top: 2px; font-size: 14.5px; color: var(--text-3); font-style: italic; }
+    .pub-where { margin-top: 2px; font-size: 14.5px; color: var(--text-3); }
     .pub .links { margin-top: 14px; }
 
     /* ---------- Projects ---------- */
@@ -597,18 +588,17 @@
     .feature h3 {
       margin-top: 14px;
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5vw, 3.2rem);
-      line-height: 1;
-      letter-spacing: -0.01em;
+      font-weight: 500;
+      font-size: clamp(2.2rem, 4.6vw, 2.9rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
     .feature-expansion {
       margin-top: 8px;
       font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--text);
+      color: var(--text-2);
     }
-    .feature-expansion .hl { color: var(--accent-ink); }
+    .feature-expansion .hl { color: var(--text); font-weight: 600; }
     .feature .card-text { max-width: 74ch; }
     .feature .card-text p { font-size: 15.5px; }
 
@@ -641,9 +631,9 @@
     .step:last-child::after { display: none; }
     .step-k {
       display: block;
-      font-family: var(--mono);
       font-size: 11px;
-      letter-spacing: 0.04em;
+      font-weight: 600;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--text-3);
     }
@@ -714,9 +704,10 @@
       gap: 28px;
     }
     .tl-date {
-      padding-top: 22px;
-      font-family: var(--mono);
-      font-size: 13px;
+      padding-top: 21px;
+      font-size: 14px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
       color: var(--text);
       line-height: 1.5;
     }
@@ -779,12 +770,11 @@
     .contact h2 {
       margin-top: 12px;
       font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(2.2rem, 4.6vw, 3.1rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
+      font-weight: 500;
+      font-size: clamp(2rem, 4.2vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
-    .contact h2 em { font-style: italic; color: var(--accent-ink); }
     .contact p { margin-top: 14px; color: var(--text-2); max-width: 52ch; }
     .contact .hero-actions { margin-top: 26px; }
     .contact-list { display: grid; gap: 10px; }
@@ -1053,7 +1043,6 @@
     <section class="section container" id="news">
       <div class="section-head reveal">
         <div>
-          <span class="num">01</span>
           <h2>News</h2>
         </div>
       </div>
@@ -1081,7 +1070,6 @@
     <section class="section container" id="publications">
       <div class="section-head reveal">
         <div>
-          <span class="num">02</span>
           <h2>Publications</h2>
         </div>
         <a class="head-link" href="https://scholar.google.com/citations?user=BQo7EFcAAAAJ&amp;hl=en" target="_blank" rel="noopener">
@@ -1127,7 +1115,6 @@
     <section class="section container" id="projects">
       <div class="section-head reveal">
         <div>
-          <span class="num">03</span>
           <h2>Projects</h2>
         </div>
         <a class="head-link" href="https://github.com/muqsitamir" target="_blank" rel="noopener">
@@ -1325,7 +1312,6 @@
     <section class="section container" id="background">
       <div class="section-head reveal">
         <div>
-          <span class="num">04</span>
           <h2>Background</h2>
         </div>
         <a class="head-link" href="files/Muqsit_Islam_CV.pdf" target="_blank" rel="noopener">
@@ -1374,7 +1360,7 @@
 
       <p class="toolbox reveal">
         <span class="eyebrow">Day to day</span>
-        <span>Python, PyTorch, OpenCV, Open3D, MONAI and C++, on Linux and Slurm GPU clusters.</span>
+        <span>Python and C++, with PyTorch, OpenCV and Open3D, on Linux with Docker and Git.</span>
       </p>
     </section>
 
@@ -1383,7 +1369,7 @@
       <section class="contact reveal" id="contact" aria-labelledby="contact-title">
         <div>
           <span class="eyebrow">Contact</span>
-          <h2 id="contact-title">Looking for a research internship, <em>from February 2027</em></h2>
+          <h2 id="contact-title">Looking for a research internship from February&nbsp;2027</h2>
           <p>
             A 6-month placement in 3D vision, visual SLAM, perception, or medical imaging.
             If your team works on any of these, I’d be glad to talk.
